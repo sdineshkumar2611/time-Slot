@@ -1,0 +1,10 @@
+
+from django.shortcuts import render
+from .models import TimeSlot
+
+def timetable_view(request):
+    timetable = TimeSlot.objects.all()
+
+    return render(request, 'timetable/timetable.html', {
+        'timetable': timetable
+    })
